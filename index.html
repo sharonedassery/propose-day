@@ -121,12 +121,20 @@
   }
 
   function accept(){
-  document.getElementById("ask").style.display="none";
-  document.getElementById("love").style.display="block";
-  document.body.style.background =
-  "linear-gradient(135deg,#89f7fe,#66a6ff)";
-  hearts();
-}
+    document.getElementById("ask").style.display="none";
+    document.getElementById("love").style.display="block";
+
+    // Change background to blue
+    document.body.style.background = "linear-gradient(135deg,#89f7fe,#66a6ff)";
+
+    // Force reload photo (prevents cache issues)
+    const img = document.getElementById("ourPhoto");
+    const base = img.getAttribute("data-base") || img.src.split("?")[0];
+    img.setAttribute("data-base", base);
+    img.src = base + "?v=" + Date.now();
+
+    hearts();
+  }
 
 
   function hearts(){
