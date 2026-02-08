@@ -58,6 +58,13 @@
   .love{
     display:none;
   }
+  
+  .photo{
+    width:100%;
+    margin:15px 0;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+  }
 
   .heart{
     position:absolute;
@@ -106,10 +113,13 @@
   }
 
   function accept(){
-    document.getElementById("ask").style.display="none";
-    document.getElementById("love").style.display="block";
-    hearts();
-  }
+  document.getElementById("ask").style.display="none";
+  document.getElementById("love").style.display="block";
+  document.body.style.background =
+    "linear-gradient(135deg,#000000,#1a1a1a)";
+  hearts();
+}
+
 
   function hearts(){
     setInterval(()=>{
